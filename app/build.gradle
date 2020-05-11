@@ -446,4 +446,17 @@ if (project.hasProperty("coverage")) {
             }
         }
     }
+
+    plugins {
+        id "org.sonarqube" version "2.8"
+    }
+
+    sonarqube {
+        properties {
+            property "sonar.projectKey", "leonardbos_FirefoxFocusASV"
+            property "sonar.organization", "leonardbos"
+            property "sonar.host.url", "https://sonarcloud.io"
+            property "sonar.login", "095526ad506472349d954765265e38ec937149d7"
+        }
+    }
 }
