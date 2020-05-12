@@ -49,8 +49,8 @@ public class AppAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
     private final App store;
     private OnAppSelectedListener listener;
 
-    public AppAdapter(Context context, ActivityInfo[] infoArray, ActivityInfo store) {
-        final List<App> apps = new ArrayList<>(infoArray.length);
+    AppAdapter(Context context, ActivityInfo[] infoArray, ActivityInfo store) {
+        this.apps = new ArrayList<>(infoArray.length);
 
         for (ActivityInfo info : infoArray) {
             apps.add(new App(context, info));
@@ -63,7 +63,6 @@ public class AppAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
             }
         });
 
-        this.apps = apps;
         this.store = store != null ? new App(context, store) : null;
     }
 

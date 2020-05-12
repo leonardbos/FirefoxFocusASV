@@ -24,6 +24,11 @@ import org.mozilla.geckoview.BuildConfig;
 import java.util.Map;
 
 public class LocalizedContent {
+
+    private LocalizedContent() {
+        throw new IllegalStateException("LocalizedContent class");
+    }
+
     // We can't use "about:" because webview silently swallows about: pages, hence we use
     // a custom scheme.
     public static final String URL_ABOUT = "focus:about";

@@ -1,3 +1,17 @@
+plugins {
+    id "org.sonarqube" version "2.8"
+}
+
+sonarqube {
+    properties {
+        property "sonar.projectKey", "leonardbos_FirefoxFocusASV"
+        property "sonar.organization", "leonardbos"
+        property "sonar.host.url", "https://sonarcloud.io"
+        property "sonar.login", "349ad44333be433e1cd52d13f3887c5a06fe2610"
+    }
+}
+
+
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply plugin: "de.mannodermaus.android-junit5"
@@ -220,6 +234,7 @@ dependencies {
 
     implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
     debugImplementation 'com.facebook.stetho:stetho:1.5.1'
+    implementation 'org.sonarsource.scanner.gradle:sonarqube-gradle-plugin:2.8'
 }
 // -------------------------------------------------------------------------------------------------
 //  Dynamically set versionCode (See tools/build/versionCode.gradle
@@ -447,16 +462,5 @@ if (project.hasProperty("coverage")) {
         }
     }
 
-    plugins {
-        id "org.sonarqube" version "2.8"
-    }
 
-    sonarqube {
-        properties {
-            property "sonar.projectKey", "leonardbos_FirefoxFocusASV"
-            property "sonar.organization", "leonardbos"
-            property "sonar.host.url", "https://sonarcloud.io"
-            property "sonar.login", "095526ad506472349d954765265e38ec937149d7"
-        }
-    }
 }

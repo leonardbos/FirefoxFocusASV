@@ -88,12 +88,7 @@ public class DownloadBroadcastReceiver extends BroadcastReceiver {
         final Snackbar snackbar = Snackbar
                 .make(browserContainer, String.format(context.getString(R.string.download_snackbar_finished), fileName), Snackbar.LENGTH_LONG);
         if (IntentUtils.INSTANCE.activitiesFoundForIntent(context, openFileIntent)) {
-            snackbar.setAction(context.getString(R.string.download_snackbar_open), new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    context.startActivity(openFileIntent);
-                }
-            });
+            snackbar.setAction(context.getString(R.string.download_snackbar_open), view -> context.startActivity(openFileIntent));
             snackbar.setActionTextColor(ContextCompat.getColor(context, R.color.snackbarActionText));
         }
         snackbar.show();

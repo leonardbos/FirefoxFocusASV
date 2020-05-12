@@ -152,7 +152,8 @@ public class BlocklistProcessor {
         }
 
         for (final String url : socialOverrides) {
-            socialTrie.put(FocusString.create(url).reverse());
+                assert socialTrie != null;
+                socialTrie.put(FocusString.create(url).reverse());
         }
 
         reader.endObject();
